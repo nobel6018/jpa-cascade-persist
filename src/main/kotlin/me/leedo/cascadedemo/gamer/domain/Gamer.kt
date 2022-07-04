@@ -12,7 +12,7 @@ class Gamer(
 
     val name: String,
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "game_team_id")
     var gameTeam: GameTeam,
 ) : BaseTimeEntity() {
